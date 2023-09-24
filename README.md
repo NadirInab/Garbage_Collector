@@ -146,30 +146,41 @@
 </div>
 
 - ``the heap in general ``
+- 
     ```md
-     The heap is a dynamic and flexible region of memory where data is allocated and deallocated at runtime.
-      Memory in the heap can be accessed in a random or arbitrary order.Since memory in the heap
-      is allocated explicitly, there's a risk of memory leaks if deallocation is not
-      managed properly.
-    
+  
+     The heap is a dynamic and flexible region of memory where data is allocated and 
+     deallocated at runtime. Memory in the heap can be accessed in a random
+     or arbitrary order.Since memory in the heap is allocated 
+     explicitly, there's a risk of memory leaks if
+     deallocation is not managed properly.
+  
      ```
+  
 - ``the heap in JAVA ``
+- 
     ```md
-     The heap is where objects and their associated data are stored.
+  
+   The heap is where objects and their associated data are stored.
 
-   Heap stores the actual objects. It creates when the JVM starts up. The user can control the heap if needed.
-   It can be of fixed or dynamic size. When you use a new keyword, the JVM creates an instance
-   for the object in a heap. While the reference of that object stores in the stack.
-   There exists only one heap for each running JVM process. When heap becomes full,
+   Heap stores the actual objects. It creates when the JVM starts up. When you use 
+   the new keyword, the JVM creates an instance for the object 
+   in a heap. While the reference of that object stores
+   in the stack. There exists only one heap foreach
+   running JVM process. When heap becomes full,
    the garbage is collected.
+  
      ```
 
 - ``the stack``
+
 ```md
-stack is an abstract data structure that follows the Last-In-First-Out (LIFO) principle.
+
+ stack is an abstract data structure that follows the Last-In-First-Out (LIFO) principle.
  stacks are crucial for managing function calls, recursion, expression evaluation,
  and various algorithms where the order of operations or processing
  needs to be controlled.
+
 ```
 
 ```java
@@ -205,18 +216,24 @@ stack is an abstract data structure that follows the Last-In-First-Out (LIFO) pr
 - ``Reachability``
 
 ```md
-Reachability refers to the ability of an object to be accessed or reached by the program during its execution
-an object is considered reachable if it can be accessed and used by the running program through
-any live reference.
+
+Reachability refers to the ability of an object to be accessed or reached by the 
+program during its execution an object is considered reachable 
+if it can be accessed and used by the running program 
+through any live reference.
+
 ```
 
 
 - ``Object Eligibility``
 
 ```md
-An object is eligible for garbage collection when it is no longer reachable,meaning there are no live
-references to the object from the program. The Java Garbage Collector identifies
-and reclaims memory for these unreachable objects.
+
+An object is eligible for garbage collection when it is no longer reachable,
+meaning there are no live references to the object from the program. 
+The Java Garbage Collector identifies and reclaims
+memory for these unreachable objects.
+
 ```
 
 ```java
