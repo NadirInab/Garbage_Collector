@@ -99,8 +99,9 @@
 </div>
 
 <div align="center">
-  <h1>What is a Garbage_Collector ?<h1>
-     <img src="https://miro.medium.com/v2/resize:fit:803/1*kylOt2przGxahWebTuENbg.png" alt="Image Alt Text">
+     
+<h1>What is a Garbage_Collector ?<h1>
+<img src="https://miro.medium.com/v2/resize:fit:803/1*kylOt2przGxahWebTuENbg.png" alt="Image Alt Text">
 </div>
 
 
@@ -125,32 +126,40 @@
 ### What is Garbage Collection ? 
   
   ```md
+
       In simple terms Garbage collection is the process of automatically 
       reclaiming memory occupied by objects that are no longer
       reachable or in use by the application.
+
    ```
 
 ```md
+
   Because forgetting to destroy unused objects will lead to memory leaks, After a
   certain point, memory won't be available anymore to create new objects,
   eventually the entire app  will stop due to Out-Of-Memory-Errors.
+
  ```
 
 </div>
+
 <div>
   
 ### What is Memory Management ?
 
   ```md
+
     Memory management is the process of controlling and organizing a computer system's 
     memory resources, which includes allocating memory to programs and 
     data structures when needed and releasing it when 
     no longer required.
+
  ```
 
 ### Simple ex 👍 : 
 
 ```java
+
   public class MemoryManagementExample {
     public static void main(String[] args) {
         String message = new String("Hello, Earth From JAVA");
@@ -158,7 +167,9 @@
         message = null;
     }
 }
+
 ```
+
 #### In Java, memory is divided into two main areas: 
 
 <div align="center">
@@ -194,7 +205,7 @@
 
 - ``the stack``
 
-```md****
+```md
 
  stack is an abstract data structure that follows the Last-In-First-Out (LIFO) principle.
  stacks are crucial for managing function calls, recursion, expression evaluation,
@@ -203,7 +214,8 @@
 
 ```
 
-```sh
+```java
+
   public class HeapExample {
 
     public static void main(String[] args) {
@@ -227,8 +239,76 @@
 }
 
 ```
+
 </div>
 
+<div>
+     
+### OverAll Recap 
+     
+```md
+     
+          Now let's make it simplier : Given the name, it seems like Garbage Collection would deal with
+          finding and deleting the garbage from the memory. However, but in reality,
+          Garbage Collection tracks each and every object available in the
+          JVM heap space, and removes the unused ones. Basically,
+          GC works in two simple steps, known as Mark and Sweep:
+         
+```
+
+```md
+          Mark – this is where the garbage collector identifies which pieces of memory 
+          are in use and which aren’t.
+          Sweep – this step removes objects 
+          identified during the “mark” phase.
+```
+     
+</div>
+
+### GC Implementations
+
+<div>
+     
+### JVM has five types of GC implementations:
+
+- **Serial Garbage Collector**
+- **Parallel Garbage Collector**
+- **CMS Garbage Collector**
+- **G1 Garbage Collector**
+- **Z Garbage Collector**
+
+
+### Now let's check out Serial & Serial GC, but before we do that we need to understand the following : 
+
+- ```Throughput```
+
+```md
+Throughput, in the context of GC, refers to the efficiency of the GC in processing and reclaiming memory.
+It's a measure of the amount of work done by the garbage collector in a given unit of time.
+Higher throughput indicates that the GC is able to process a larger portion
+of the heap and reclaim memory quickly, thus maximizing
+the application's overall throughput or work done per unit of time.
+```
+
+- ```Single Thread```
+
+```md
+In the context of garbage collection, a "single thread" refers to the use of only one thread to perform GC operations.
+For example, in the Serial Garbage Collector, a single thread is responsible for GC activities.
+This approach is simple and suitable for small applications but may have longer
+pause times as the single thread performs GC sequentially.
+```
+
+
+- ```Multi-thread```
+
+```md
+Multi-thread" refers to the use of multiple threads to perform a task concurrently.
+In the context of GC, this means using more than one thread to handle
+GC activities simultaneously. 
+```
+
+</div>
 <div>
   
 ### Reachability and Object Eligibility
