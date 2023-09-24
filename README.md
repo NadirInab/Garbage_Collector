@@ -114,10 +114,9 @@
 - ``What is Memory Management in JAVA ?``
 - ``HEAP``
 - ``STACK``
+- ``Serial Garbage Collector``
+- ``Parallel Garbage Collector``
 - ``Reachability and Object Eligibility``
-- ``Young Generation``
-- ``Old Generation (Tenured Generation):``
-- ``Permanent Generation``
 
 </div>
 
@@ -259,8 +258,7 @@
 ```md
           Mark – this is where the garbage collector identifies which pieces of memory 
           are in use and which aren’t.
-          Sweep – this step removes objects 
-          identified during the “mark” phase.
+          Sweep – this step removes objects identified during the “mark” phase.
 ```
      
 </div>
@@ -306,6 +304,43 @@ pause times as the single thread performs GC sequentially.
 Multi-thread" refers to the use of multiple threads to perform a task concurrently.
 In the context of GC, this means using more than one thread to handle
 GC activities simultaneously. 
+```
+
+### Summary
+```md
+throughput is a measure of the efficiency of the GC in reclaiming memory, while "single thread" && "multi-thread"
+refer to the number of threads involved in performing garbage collection operations, where "multi-thread"
+involves using multiple threads to process tasks concurrently, potentially leading to faster
+processing and improved efficiency.
+
+```
+
+</div>
+
+<div>
+### Now Let's dive into : 
+- **Serial Garbage Collector** 
+
+```md
+
+Is a simple and basic GC that uses a single thread for garbage collection.
+It uses a mark-and-sweep algorithm and is best suited for small
+applications or applications that don't require high throughput.
+
+```
+
+- **Parallel  Garbage Collector** 
+
+```md
+
+AKA the Throughput Collector uses multiple threads for garbage collection.
+It's designed to take advantage of multiple CPU cores to improve garbage
+collection performance and throughput.  Mmultiple garbage collection
+threads work in parallel to scan and collect garbage. His
+parallelism can significantly reduce the total time
+spenton garbage collection, making it suitable
+for applications that prioritize throughput.
+
 ```
 
 </div>
@@ -406,4 +441,4 @@ class MyClass {
      <img src="https://i.stack.imgur.com/eP0SJ.png" alt="Image Alt Text">
 </div>
 
-## Disclaimers
+## 
