@@ -155,7 +155,38 @@
 
  ```
 
-### Simple ex 👍 : 
+#### Simple ex in C 👍 : 
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Allocate memory for an integer
+    int *num = (int *)malloc(sizeof(int));
+
+    // Check if memory allocation was successful
+    if (num == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;  // Exit with an error
+    }
+
+    // Assign a value to the allocated memory
+    *num = 42;
+
+    // Print the value
+    printf("Value: %d\n", *num);
+
+    // Deallocate the dynamically allocated memory
+    free(num);
+
+    return 0;
+}
+
+```
+
+### Simple ex  in java 👍: 
 
 ```java
 
@@ -169,7 +200,7 @@
 
 ```
 
-#### In Java, memory is divided into two main areas: 
+#### Generally speaking the memory is divided into two main areas: 
 
 <div align="center">
   <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
@@ -269,11 +300,11 @@
      
 ### JVM has five types of GC implementations:
 
-- **Serial Garbage Collector**
-- **Parallel Garbage Collector**
-- **CMS Garbage Collector**
-- **G1 Garbage Collector**
-- **Z Garbage Collector**
+- **Serial GC**
+- **Parallel GC**
+- **CMS GC**
+- **G1 GC**
+- **Z GC**
 
 
 ### Now let's check out Serial & Serial GC, but before we do that we need to understand the following : 
@@ -305,6 +336,11 @@ Multi-thread" refers to the use of multiple threads to perform a task concurrent
 In the context of GC, this means using more than one thread to handle
 GC activities simultaneously. 
 ```
+
+<div align="center">
+  <img src="https://i.pinimg.com/originals/a2/22/cc/a222cc08928cd6ce2654214b68c3141b.jpg" alt="Image Alt Text">
+</div>
+
 
 ### Summary
 ```md
@@ -436,9 +472,17 @@ class MyClass {
 ```
 </div>
 
-<div align="center">
-  <h1>What is a Garbage_Collector ?<h1>
-     <img src="https://i.stack.imgur.com/eP0SJ.png" alt="Image Alt Text">
-</div>
+## OverAll 
+#### We may create a rabbit hole or a tree of concepts by explaining each concept independently, but I'd love for you guys to discover these concepts as they're very important to our understanding of the GC. 
 
-## 
+```md
+     Young Generation
+     Old Generation
+     Permanent Generation
+     CMS Garbage Collector
+     G1 Garbage Collector
+     Z Garbage Collecto
+```
+
+## Conclusion 
+### garbage collection is a crucial mechanism for automated memory management, ensuring efficient memory usage and reducing the risk of memory-related errors in software applications
