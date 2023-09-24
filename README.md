@@ -140,6 +140,11 @@
 }
 ```
 #### In Java, memory is divided into two main areas: 
+
+<div align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
+</div>
+
 - ``the heap in general ``
     ```md
      The heap is a dynamic and flexible region of memory where data is allocated and deallocated at runtime.
