@@ -123,9 +123,10 @@
 ### What is Memory Management ?
 
   ```md
-    Memory management is the process of controlling and organizing a computer system's memory
-     resources, which includes allocating memory to programs and data structures
-    when needed and releasing it when no longer required.
+    Memory management is the process of controlling and organizing a computer system's 
+    memory resources, which includes allocating memory to programs and 
+    data structures when needed and releasing it when 
+    no longer required.
  ```
 
 ### Simple ex 👍 : 
@@ -146,7 +147,7 @@
 </div>
 
 - ``the heap in general ``
-- 
+
     ```md
   
      The heap is a dynamic and flexible region of memory where data is allocated and 
@@ -158,7 +159,7 @@
      ```
   
 - ``the heap in JAVA ``
-- 
+
     ```md
   
    The heap is where objects and their associated data are stored.
@@ -174,7 +175,7 @@
 
 - ``the stack``
 
-```md
+```md****
 
  stack is an abstract data structure that follows the Last-In-First-Out (LIFO) principle.
  stacks are crucial for managing function calls, recursion, expression evaluation,
