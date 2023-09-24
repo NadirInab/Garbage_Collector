@@ -1,6 +1,21 @@
+![Java](https://img.shields.io/badge/JAVA-green.svg)
+![Java](https://img.shields.io/badge/JDK-aqua.svg)
+![Java](https://img.shields.io/badge/JRE-brown.svg)
+![Java](https://img.shields.io/badge/JVM-khaki.svg)
+![JavaDoc](https://img.shields.io/badge/javaDocs-yellow.svg)
+![JavaDoc](https://img.shields.io/badge/Garbage_Collector-red.svg)
+![JavaDoc](https://img.shields.io/badge/Memory_management-gray.svg)
+![JavaDoc](https://img.shields.io/badge/Young_Generation-gold.svg)
+![JavaDoc](https://img.shields.io/badge/Old_Generation-indigo.svg)
+![JavaDoc](https://img.shields.io/badge/Heap-orange.svg)
+![JavaDoc](https://img.shields.io/badge/Stack-orchid.svg)
+
 <div align="center"> 
 <h1>  Garbage_Collector<h1>
-<p >This repository provides in-depth information and resources about the Java Garbage Collector .</p>
+
+
+  
+<p>This repository provides in-depth information and resources about the Java Garbage Collector .</p>
 </div>
 
 <div> <h3> To get a better understanding of deeper concepts, let's do a brief recap, about the following :  </h3> </div>
@@ -183,7 +198,7 @@
 
 ```
 
-```java
+```sh
   public class HeapExample {
 
     public static void main(String[] args) {
@@ -236,7 +251,7 @@ memory for these unreachable objects.
 
 ```
 
-```java
+```sh
 import java.lang.ref.*;
 
 public class GarbageCollectionExample {
