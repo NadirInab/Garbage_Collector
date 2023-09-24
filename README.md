@@ -92,12 +92,12 @@
 -  ``What is Garbage collection in JAVA ?``
 -  ``Why do we need garbage collection ?``
 - ``What is Memory Management in JAVA ?``
+- ``HEAP``
+- ``STACK``
 - ``Reachability and Object Eligibility``
-- ``Java Archive Tool (jar)``
-- ``Java Documentation Generator (javadoc)``
-- ``JavaFX``
-- ``Version Management``
-- ``As well as many other features we will learn throughout the year``
+- ``Young Generation``
+- ``Old Generation (Tenured Generation):``
+- ``Permanent Generation``
 
 </div>
 
