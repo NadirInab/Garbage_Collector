@@ -1,3 +1,7 @@
+<div align="center">
+     <img src="https://www.itprotoday.com/sites/itprotoday.com/files/java-logo_0.jpg" alt="Image Alt Text">
+</div>
+
 ![Java](https://img.shields.io/badge/JAVA-green.svg)
 ![Java](https://img.shields.io/badge/JDK-aqua.svg)
 ![Java](https://img.shields.io/badge/JRE-brown.svg)
@@ -314,6 +318,11 @@ class MyClass {
 
 
 ```
+</div>
+
+<div align="center">
+  <h1>What is a Garbage_Collector ?<h1>
+     <img src="https://i.stack.imgur.com/eP0SJ.png" alt="Image Alt Text">
 </div>
 
 ## Disclaimers
