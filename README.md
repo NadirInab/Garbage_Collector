@@ -309,12 +309,12 @@ int main() {
 - **G1 GC**
 - **Z GC**
 
-
 ### Now let's check out Serial & Serial GC, but before we do that we need to understand the following : 
 
 - ```Throughput```
 
 ```md
+
 Throughput, in the context of GC, refers to the efficiency of the GC in processing and reclaiming memory.
 It's a measure of the amount of work done by the garbage collector in a given unit of time.
 Higher throughput indicates that the GC is able to process a larger portion
@@ -325,6 +325,7 @@ the application's overall throughput or work done per unit of time.
 - ```Single Thread```
 
 ```md
+
 In the context of garbage collection, a "single thread" refers to the use of only one thread to perform GC operations.
 For example, in the Serial Garbage Collector, a single thread is responsible for GC activities.
 This approach is simple and suitable for small applications but may have longer
@@ -339,9 +340,10 @@ Multi-thread" refers to the use of multiple threads to perform a task concurrent
 In the context of GC, this means using more than one thread to handle
 GC activities simultaneously. 
 ```
+# HERE DOES NOT SHOW
 
 <div align="center">
-  <img src="https://i.pinimg.com/originals/a2/22/cc/a222cc08928cd6ce2654214b68c3141b.jpg" alt="Image Alt Text">
+  <img src="https://i.pinimg.com/originals/a2/22/cc/a222cc08928cd6ce2654214b68c3141b.jpg" alt="Image Alt TeSDSHDSJHDJSDxt">
 </div>
 
 
@@ -357,7 +359,9 @@ processing and improved efficiency.
 </div>
 
 <div>
+     
 ### Now Let's dive into : 
+
 - **Serial Garbage Collector** 
 
 ```md
@@ -365,6 +369,17 @@ processing and improved efficiency.
 Is a simple and basic GC that uses a single thread for garbage collection.
 It uses a mark-and-sweep algorithm and is best suited for small
 applications or applications that don't require high throughput.
+
+```
+
+#### Marking and sweaping and compacting 
+
+```md
+
+The Serial Garbage Collector first marks the live objects, then sweeps and reclaims memory for the dead
+(unreachable) objects, and finally compacts the memory by moving live objects to a compacted area.
+ It uses a single thread for these operations, making it simple but less efficient
+compared to collectors that use multiple threads.
 
 ```
 
@@ -382,8 +397,34 @@ for applications that prioritize throughput.
 
 ```
 
+#### Marking and sweaping and compacting 
+
+```md
+
+the Parallel Garbage Collector utilizes multiple threads to perform these operations in parallel,
+which can significantly improve garbage collection performance on multi-core systems.
+he parallelism achieved by utilizing multiple threads, making garbage collection
+faster on modern computers with multiple processor cores
+
+```
+
 </div>
 <div>
+
+
+#### the heap is allocated into smaller parts, called GENERATIONS.
+
+### Young Generation : 
+*     the newly created objects are allocated to the young gen.
+### Old Generation : 
+*     If the new object requests for a larger heap space, it gets allocated directly into the old gen. Also objects which have survived a few GC cycles gets promoted to the old gen i.e long lived objects house in old gen.
+### Permanent Generation 
+*      The permanent generation holds objects that the JVM finds convenient to have the garbage collector manage, such as objects describing classes and methods, as well as the classes and methods themselves.
+
+  <div align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*XXqPGJCxQfri7qE_GrSB8Q.png" alt="Image Alt Text">
+</div>
+
   
 ### Reachability and Object Eligibility
 
