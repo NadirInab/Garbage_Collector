@@ -6,6 +6,7 @@
 ![Java](https://img.shields.io/badge/JDK-aqua.svg)
 ![Java](https://img.shields.io/badge/JRE-brown.svg)
 ![Java](https://img.shields.io/badge/JVM-khaki.svg)
+![Java](https://img.shields.io/badge/JAVAC-purple.svg)
 ![JavaDoc](https://img.shields.io/badge/javaDocs-yellow.svg)
 ![JavaDoc](https://img.shields.io/badge/Garbage_Collector-red.svg)
 ![JavaDoc](https://img.shields.io/badge/Memory_management-gray.svg)
@@ -72,7 +73,7 @@
   <b>The JVM is a crucial component of the Java platform. It's an abstract machine that provides a runtime environment in which Java bytecode can be executed. The JVM translates compiled Java bytecode into native machine code that's specific to the underlying hardware.</b>
 <h2>Features : </h2>
   
-- **Platform Independence**
+- **Platform Independence (WORA)**
 - **Just-in-Time Compilation (JIT)**
 - **Garbage Collection**
   
@@ -161,9 +162,6 @@
 ```
 #### In Java, memory is divided into two main areas: 
 
-<div align="center">
-  <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
-</div>
 
 - ``the heap in general ``
 
@@ -227,6 +225,11 @@
 }
 
 ```
+
+<div align="center">
+  <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
+</div>
+
 </div>
 
 <div>
