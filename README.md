@@ -268,13 +268,11 @@ int main() {
 
 ```
 
-<<<<<<< HEAD
+
 <div align="center">
   <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
 </div>
 
-=======
->>>>>>> 3bc1e8a6ed70f8d1bccea1c6f70698ecebee5038
 </div>
 
 <div>
