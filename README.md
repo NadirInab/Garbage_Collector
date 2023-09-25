@@ -100,8 +100,9 @@
 </div>
 
 <div align="center">
-  <h1>What is a Garbage_Collector ?<h1>
-     <img src="https://miro.medium.com/v2/resize:fit:803/1*kylOt2przGxahWebTuENbg.png" alt="Image Alt Text">
+     
+<h1>What is a Garbage_Collector ?<h1>
+<img src="https://miro.medium.com/v2/resize:fit:803/1*kylOt2przGxahWebTuENbg.png" alt="Image Alt Text">
 </div>
 
 
@@ -114,10 +115,9 @@
 - ``What is Memory Management in JAVA ?``
 - ``HEAP``
 - ``STACK``
+- ``Serial Garbage Collector``
+- ``Parallel Garbage Collector``
 - ``Reachability and Object Eligibility``
-- ``Young Generation``
-- ``Old Generation (Tenured Generation):``
-- ``Permanent Generation``
 
 </div>
 
@@ -126,32 +126,71 @@
 ### What is Garbage Collection ? 
   
   ```md
+
       In simple terms Garbage collection is the process of automatically 
       reclaiming memory occupied by objects that are no longer
       reachable or in use by the application.
+
    ```
 
 ```md
+
   Because forgetting to destroy unused objects will lead to memory leaks, After a
   certain point, memory won't be available anymore to create new objects,
   eventually the entire app  will stop due to Out-Of-Memory-Errors.
+
  ```
 
 </div>
+
 <div>
   
 ### What is Memory Management ?
 
   ```md
+
     Memory management is the process of controlling and organizing a computer system's 
     memory resources, which includes allocating memory to programs and 
     data structures when needed and releasing it when 
     no longer required.
+
  ```
 
-### Simple ex 👍 : 
+#### Simple ex in C 👍 : 
+
+```c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Allocate memory for an integer
+    int *num = (int *)malloc(sizeof(int));
+
+    // Check if memory allocation was successful
+    if (num == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;  // Exit with an error
+    }
+
+    // Assign a value to the allocated memory
+    *num = 42;
+
+    // Print the value
+    printf("Value: %d\n", *num);
+
+    // Deallocate the dynamically allocated memory
+    free(num);
+
+    return 0;
+}
+
+```
+
+### Simple ex  in java 👍: 
 
 ```java
+
   public class MemoryManagementExample {
     public static void main(String[] args) {
         String message = new String("Hello, Earth From JAVA");
@@ -159,8 +198,10 @@
         message = null;
     }
 }
+
 ```
-#### In Java, memory is divided into two main areas: 
+
+#### Generally speaking the memory is divided into two main areas: 
 
 
 - ``the heap in general ``
@@ -192,7 +233,7 @@
 
 - ``the stack``
 
-```md****
+```md
 
  stack is an abstract data structure that follows the Last-In-First-Out (LIFO) principle.
  stacks are crucial for managing function calls, recursion, expression evaluation,
@@ -201,7 +242,8 @@
 
 ```
 
-```sh
+```java
+
   public class HeapExample {
 
     public static void main(String[] args) {
@@ -226,12 +268,123 @@
 
 ```
 
+<<<<<<< HEAD
 <div align="center">
   <img src="https://miro.medium.com/v2/resize:fit:1000/1*k8DpgOO1fpigrZIeBtDhWA.png" alt="Image Alt Text">
 </div>
 
+=======
+>>>>>>> 3bc1e8a6ed70f8d1bccea1c6f70698ecebee5038
 </div>
 
+<div>
+     
+### OverAll Recap 
+     
+```md
+     
+          Now let's make it simplier : Given the name, it seems like Garbage Collection would deal with
+          finding and deleting the garbage from the memory. However, but in reality,
+          Garbage Collection tracks each and every object available in the
+          JVM heap space, and removes the unused ones. Basically,
+          GC works in two simple steps, known as Mark and Sweep:
+         
+```
+
+```md
+          Mark – this is where the garbage collector identifies which pieces of memory 
+          are in use and which aren’t.
+          Sweep – this step removes objects identified during the “mark” phase.
+```
+     
+</div>
+
+### GC Implementations
+
+<div>
+     
+### JVM has five types of GC implementations:
+
+- **Serial GC**
+- **Parallel GC**
+- **CMS GC**
+- **G1 GC**
+- **Z GC**
+
+
+### Now let's check out Serial & Serial GC, but before we do that we need to understand the following : 
+
+- ```Throughput```
+
+```md
+Throughput, in the context of GC, refers to the efficiency of the GC in processing and reclaiming memory.
+It's a measure of the amount of work done by the garbage collector in a given unit of time.
+Higher throughput indicates that the GC is able to process a larger portion
+of the heap and reclaim memory quickly, thus maximizing
+the application's overall throughput or work done per unit of time.
+```
+
+- ```Single Thread```
+
+```md
+In the context of garbage collection, a "single thread" refers to the use of only one thread to perform GC operations.
+For example, in the Serial Garbage Collector, a single thread is responsible for GC activities.
+This approach is simple and suitable for small applications but may have longer
+pause times as the single thread performs GC sequentially.
+```
+
+
+- ```Multi-thread```
+
+```md
+Multi-thread" refers to the use of multiple threads to perform a task concurrently.
+In the context of GC, this means using more than one thread to handle
+GC activities simultaneously. 
+```
+
+<div align="center">
+  <img src="https://i.pinimg.com/originals/a2/22/cc/a222cc08928cd6ce2654214b68c3141b.jpg" alt="Image Alt Text">
+</div>
+
+
+### Summary
+```md
+throughput is a measure of the efficiency of the GC in reclaiming memory, while "single thread" && "multi-thread"
+refer to the number of threads involved in performing garbage collection operations, where "multi-thread"
+involves using multiple threads to process tasks concurrently, potentially leading to faster
+processing and improved efficiency.
+
+```
+
+</div>
+
+<div>
+### Now Let's dive into : 
+- **Serial Garbage Collector** 
+
+```md
+
+Is a simple and basic GC that uses a single thread for garbage collection.
+It uses a mark-and-sweep algorithm and is best suited for small
+applications or applications that don't require high throughput.
+
+```
+
+- **Parallel  Garbage Collector** 
+
+```md
+
+AKA the Throughput Collector uses multiple threads for garbage collection.
+It's designed to take advantage of multiple CPU cores to improve garbage
+collection performance and throughput.  Mmultiple garbage collection
+threads work in parallel to scan and collect garbage. His
+parallelism can significantly reduce the total time
+spenton garbage collection, making it suitable
+for applications that prioritize throughput.
+
+```
+
+</div>
 <div>
   
 ### Reachability and Object Eligibility
@@ -324,9 +477,17 @@ class MyClass {
 ```
 </div>
 
-<div align="center">
-  <h1>What is a Garbage_Collector ?<h1>
-     <img src="https://i.stack.imgur.com/eP0SJ.png" alt="Image Alt Text">
-</div>
+## OverAll 
+#### We may create a rabbit hole or a tree of concepts by explaining each concept independently, but I'd love for you guys to discover these concepts as they're very important to our understanding of the GC. 
 
-## Disclaimers
+```md
+     Young Generation
+     Old Generation
+     Permanent Generation
+     CMS Garbage Collector
+     G1 Garbage Collector
+     Z Garbage Collecto
+```
+
+## Conclusion 
+### garbage collection is a crucial mechanism for automated memory management, ensuring efficient memory usage and reducing the risk of memory-related errors in software applications
