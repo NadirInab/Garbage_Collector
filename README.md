@@ -490,4 +490,9 @@ class MyClass {
 ```
 
 ## Conclusion 
-### garbage collection is a crucial mechanism for automated memory management, ensuring efficient memory usage and reducing the risk of memory-related errors in software applications
+### garbage collection is a crucial mechanism for automated memory management, ensuring efficient memory usage and reducing the risk of memory-related errors in software applications*
+
+<div align="center">
+     <img src="https://present5.com/presentation/245812954_308141166/image-9.jpg" alt="Image Alt Text">
+</div>
+
