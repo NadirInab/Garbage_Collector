@@ -254,9 +254,6 @@ int main() {
 
         // Calling a method that creates a variable stored on the stack
         int result = calculateSum(10, 20);
-
-        // Local variable stored on the stack
-        String message = "Hello, World!";
     }
 
     public static int calculateSum(int a, int b) {
